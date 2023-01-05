@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import PersonalInfo from './PersonalInfo';
 import SignUpInfo from './SignUpInfo';
+import OtherInfo from './OtherInfo';
 
 
 function Form() {
@@ -12,12 +13,15 @@ function Form() {
                 return <SignUpInfo/>;
             } else if (page === 1 ) {
                 return <PersonalInfo />;
-            }
+            } return <OtherInfo/>;
             
     } 
   return (
     <div className='form'>
         <div className='progressbar'>
+            <div style={{width : page === 0 ? "33.3%" : page===1 ? "66%" : "100%" }}
+            > 
+            </div>
             <div className='form-container'>
                 <div className='Header'>
                     <h1>{FormTitles[page]}</h1> 
