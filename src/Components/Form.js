@@ -40,10 +40,15 @@ function Form() {
                 <div className='footer'>
                     <button
                     disabled = {page === 0}
-                    onClick={() => (setPage((currPage) => currPage -1 ))}>Prev</button>
+                    onClick={() => (setPage((currPage) => currPage -1 ))}>Prev</button>;
                     <button 
-                    disabled = {page === FormTitles.length -1}
-                    onClick={() => {setPage((currPage) => currPage + 1 )}}>Next</button>
+                    onClick={() => {
+                        if (page === FormTitles.length -1 ){
+                            alert("FORM SUBMITTED");
+                        }else{ 
+                            setPage((currPage) => currPage + 1)};
+                        }}> 
+                        {page=== FormTitles.length - 1 ? "Sumbit" : "Next" }</button>
                 </div>
             </div>
         </div>
