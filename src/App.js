@@ -7,7 +7,7 @@ import OtherInfo from './Components/OtherInfo';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <Form/>
     </div>
   );

@@ -1,11 +1,17 @@
 import React from 'react'
 
-function PersonalInfo() {
+function PersonalInfo({formData, setFormData}) {
   return (
     <div className='personalInfo'>
-      <div className='PersonalInfo-container'>
-      <input type="text" placeholder="FirstNanme" />
-      <input type="text" placeholder="LastName" />
+      <div className='personal-info-container'>
+      <input type="text" 
+      placeholder="FirstName"
+      value={formData.FirstName}
+      onChange={(event) => setFormData({...formData, FirstName: event.target.value})} />
+      <input type="text" 
+      placeholder="LastName" 
+      value={formData.LastName}
+      onChange={(event) => setFormData({...formData, LastName: event.target.value})}/>
       <input type="text" placeholder="Username" />
     </div>
     </div>
